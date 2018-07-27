@@ -25,7 +25,7 @@ SECRET_KEY = 'gk=owg-wz)=m@lu&o*m!v!2m%0r%n%x(0!2z7vq17has9e@obf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['staging-coin-match.herokuapp.com', 'coin-match.herokuapp.com']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'apps.api',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [

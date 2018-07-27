@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: bash -c "python coin_match/manage.py makemigrations && python coin_match/manage.py migrate && python coin_match/manage.py runserver 0.0.0.0:8000"
+    container_name: src
+    volumes:
+      - .:/src
+    ports:
+      - "8000:8000"

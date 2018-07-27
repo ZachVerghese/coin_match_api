@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <title>Cryptoshow</title>
+    <!-- <script>
+        $(document).ready(function(){
+            if (currency.id ==1){
+            //     $.get("https://markets.bisq.network/api/ticker?market=btc_usd",function(res){
+            //         console.log(res);
+            //         }, "json");
+            //     $.get("https://coinsquare.com/api/v1/data/quotes");
+            //     $.get('https://api.kraken.com/0/public/Ticker?pair=XBTUSD');
+            //     $.get('https://cex.io/api/ticker/BTC/USD');
+            //     $.get('https://www.bitstamp.net/api/v2/ticker/btcusd');
+            //     $.get('https://localbitcoins.com/bitcoincharts/usd/trades.json');
+            //     $.get('https://api.gemini.com/v1/pubticker/btcusd');
+            //     $.get('https://api.coinbase.com/v2/prices/BTC-USD/spot');
+            // }
+            if (currency.id ==2){}
+            if (currency.id ==3){}
+            if (currency.id ==3){}
+            if (currency.id ==4){}
+            if (currency.id ==5){}
+            if (currency.id ==6){}
+            
+        });
+    </script> -->
+</head>
+<body>
+    <h1>{{currency.name}}</h1>
+    <table>
+        {% for exchange in exchanges %}
+        <tr>
+            <td>{{exchange.name}}</td>
+            <td>something else here </td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+
+</body>
+</html>
+
+
+<!-- Refresh document every 60 seconds using HTML Meta tag add this inside the head tag of the page
+
+ <meta http-equiv="refresh" content="60"> -->
+
+ coinsquare
+  kraken 
+  bitstamp
+  bitsquare
+  local
+  gemini
+  coinbase
+  cex

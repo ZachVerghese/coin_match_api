@@ -13,7 +13,7 @@ class CryptoCurrency(models.Model):
     created_at= models.DateTimeField(auto_now_add= True)
     updated_at= models.DateTimeField(auto_now= True)
     watchers = models.ManyToManyField(User, related_name= "crypto_preferences")
-    admin = models.ForeignKey('auth.User',  # ADD THIS FIELD
+    owner = models.ForeignKey('auth.User',
     related_name='cryptocurrencies', 
     on_delete=models.CASCADE, default=ADMIN_ID)
 
@@ -25,14 +25,14 @@ class Exchange(models.Model):
     updated_at= models.DateTimeField(auto_now= True)
     desc=models.TextField(max_length=500)
     products = models.ManyToManyField(CryptoCurrency, related_name= "suppliers")
-    admin = models.ForeignKey('auth.User',  # ADD THIS FIELD
+    owner = models.ForeignKey('auth.User',  # ADD THIS FIELD
     related_name='exchanges', 
     on_delete=models.CASCADE, default=ADMIN_ID)
 
 class Transaction(models.Model):
     cryptocurrencies = models.ForeignKey(CryptoCurrency, related_name= "trade")
     exchanges = models.ForeignKey(Exchange, related_name= "past_trades")
-    volume = models.DecimalField(max_digits = 8, decimal_places=2)
+    volume = models.DecimalField(max_digits = 20, decimal_places=2)
     buy_price= models.DecimalField(max_digits = 8, decimal_places=2)
     sell_price= models.DecimalField(max_digits = 8, decimal_places=2)
     spot_price= models.DecimalField(max_digits = 8, decimal_places=2)
